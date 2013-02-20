@@ -15,7 +15,7 @@
             <input type="hidden" id="time" value="<?php echo time();?>">
             <label id="message_label" style="float: left;">Your message</label>
             <textarea id="mes_text" maxlength="1000" style="width: 271px; height: 150px; border-radius: 4px; border: 2px inset; "></textarea>
-            <input type="submit" value="Send" id="send" style="height: 30px; width: 100px; margin: 10px 0;">
+            <input type="submit" value="Send" id="send" disabled="disabled" style="height: 30px; width: 100px; margin: 10px 0;">
         </form>
     </div>
 <!--    <div id="my_address"> disabled="disabled" 
