@@ -3,19 +3,9 @@
         <link rel="stylesheet" href="css/dreid.css">
         <script type="text/javascript" src="js/history.js"></script>
         <script type="text/javascript" src="js/jquery.js"></script>
-        <!--<script type="text/javascript" src="js/tempdlates.js"></script>-->
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script language="javascript">
-            $(document).ready(function(){     
-//                $('#header').append('<h1>'+localStorage.lastpage+'</h1>');
-//                
-//                if(localStorage.lastpage == null){
-//                    $('#content').load('main.php',function(){
-//                        $('#content').slideDown('slow','swing');
-//                        localStorage.lastpage="main";
-//                    });
-//                };
-              
+            $(document).ready(function(){                   
                 switch(localStorage.lastpage){
                     case 'main':
                         $('#content').load('main.php');
@@ -74,7 +64,7 @@
         <div id="wrapper">
             <div id="header">
                 <h1>
-                    <!--Shevchenko.De-->
+
                 </h1>
             </div>
             <div class="menu">
@@ -90,7 +80,7 @@
 
             <div id="footer">
                 <p>
-                   &copy;&nbsp;2012&nbsp;ShevchenkoDenis
+                   &copy;&nbsp;2012&nbsp;
                 </p>  
             </div>   
         </div>

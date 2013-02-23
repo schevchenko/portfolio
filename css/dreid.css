@@ -463,16 +463,17 @@ transform:rotate(3deg);
 #map {
     width: 600px ;
     height: 340px;
+/*    display: block;
     float: right ;
     border-left: 1px solid gray;
     border-right: 0px solid gray;
     border-bottom: 1px solid gray;
-    z-index: 100000;
+    z-index: 100000;*/
 }
 
-.gmnoprint {
+/*.gmnoprint {
     visibility: hidden;
-}
+}*/
 /*  END_OF_CONTACTS_BLOCK    */
 
 /*img {

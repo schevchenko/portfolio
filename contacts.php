@@ -18,58 +18,23 @@
             <input type="submit" value="Send" id="send" disabled="disabled" style="height: 30px; width: 100px; margin: 10px 0;">
         </form>
     </div>
-<!--    <div id="my_address"> disabled="disabled" 
-        <h3> ORT: </h3> Deutschland, Kirhheim bei Munchen, Fichtenweg 1
-    </div>-->
-<!--    <div class="drop-shadow lifted" id="social_networks">    
-        <span>
-            <a href="">
-                <img src="/images/contacts/skype.png" alt="skype">
-            </a>
-        </span>
-
-        <span>
-            <a href="">
-                <img src="/images/contacts/facebook.png" alt="facebook">
-            </a>
-        </span>
-
-        <span>
-            <a href="">
-                <img src="/images/contacts/vk.png" alt="vkontakte">
-            </a>
-        </span>
-
-        <span>
-            <a href="">
-                <img src="/images/contacts/twitter.png" alt="twitter">
-            </a>
-        </span>
-    </div>-->
-
 </div>
-<div id="map" style="z-index: 1000">
+<div id="map_canvas" style="width: 600px ; height: 340px; position: relative; float: right; display: block;">
 
 </div>
 
 <script language="javascript"> 
-//  загрузка карты
 
-//try{
-//    var a = 0;
     function initializing(){
-//   alert('ho');
-//        a = 'pizda';
-        var myLatlng = new google.maps.LatLng(48.17309, 11.745523);
-        if(myLatlng == null){
-            alert('hui');
-        }
+
+        var myLatlng = new google.maps.LatLng(40.72436422, -74.00115967);
+
         var myOptions = {
             zoom: 18,
             center: myLatlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-        var map = new google.maps.Map(document.getElementById("map"), myOptions);
+        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
         
         var contentString = '<div id="my_comment">Ich bin hier!</div>';
         var infowindow = new google.maps.InfoWindow({
@@ -85,35 +50,31 @@
         });
         return;
     }
-//}
-//catch(e) {
-//    alert(e);
-//}
-//finally{
-    // jquery usability
+            initializing();
+// ZOOM
     $('#decrease').hide();
     $(document).ready(function(){
-        $('#map').delay(200);
+
+        $('#map_canvas').delay(200);
         $('#increase').click(function(){
             $('#my_dates').fadeOut(300,function(){
-                $('#map').animate({width: '896px', height: '418px'},1000);
+                $('#map_canvas').animate({width: '896px', height: '418px'},1000);
             });            
             $('#increase').hide();
             $('#decrease').fadeIn(2000);
         });
         $('#decrease').click(function(){
-            $('#map').animate({width: '600px', height: '340px'},1000,function(){
+            $('#map_canvas').animate({width: '600px', height: '340px'},1000,function(){
                 $('#my_dates').fadeIn(300);
             });
             $('#decrease').hide();
             $('#increase').fadeIn(2000);
         });
     });
-//}
-//
-//if(a != 0){
-    initializing();
-//}
+
+
+
+
 
 //  ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ СОСТОЯНИЯ ВАЛИДНОСТИ
 
@@ -212,7 +173,7 @@ text_valid =    false;
             },
             function(data){            
             // ПОЛУЧЕНИЕ И ВЫВОД СТАТУСА ОТПРАВКИ
-            //    $('#send').attr('disabled','disabled');
+                $('#send').attr('disabled','disabled');
                 $('body').prepend("<div id='message_form' class='form'><p>"+data['status']+"</p><p>"+data['text']+"</p></div>");
                 $('#message_form').fadeIn(1000,function(){
                      $('#message_form').fadeOut(1000);
