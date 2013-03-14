@@ -16,8 +16,13 @@
                         localStorage.lastpage="portfolio";
                         break;
                     case 'contacts':
-                        $('#content').load('contacts.php');
                         localStorage.lastpage="contacts";
+                        $('#content').load('contacts.php',function(){
+                            $('#content').append('<div id="map_canvas"></div>');
+                            $('#map_canvas').load('map.php',function(){
+                                $('#map_canvas').animate({opacity: '1'},1000);
+                            });                            
+                        });
                         break;
                     default:
                         $('#content').load('main.php');
@@ -38,25 +43,47 @@
                 });
                 
                 $('#contacts').click(function(){
-                    $('#content').slideUp('slow','swing',function(){
+                    $('#content').slideToggle('slow','swing',function(){
                         $('#content').load('contacts.php',function(){
-                            $('#content').slideDown('slow','swing');
+                            $('#content').slideToggle('slow','swing', function(){
+                                 if(localStorage.lastpage == "contacts"){
+                                $('#content').append('<div id="map_canvas"></div>');
+                                $('#map_canvas').load('map.php',function(){
+                                    $('#map_canvas').animate({opacity: '1'},1000);
+                                }); }
+                            });
+
                         });
                         localStorage.lastpage="contacts";
                     });
                 });
                 
                 $('#portfolio').click(function(){
-                    $('#content').slideUp('slow','swing', function(){
+                    $('#content').slideToggle('slow','swing', function(){
                         $('#content').load('portfolio.php',function(){
-                            $('#content').slideDown('slow','swing');
+                            $('#content').slideToggle('slow','swing');
+ 
+                            
                         });
                         localStorage.lastpage="portfolio";
                     });
                 });
+//            if($('#introduction').length > 0){
+//                alert('hello');
+//            }
 
             })
-            
+//                alert($('#introduction').length);
+
+        //$('#my_dates').prepend('<div id="map_canvas"></div>');
+        // установим обработчик события resize
+//        $(window).resize(function(){
+//        initializing();
+//         // alert('Размеры окна браузера изменены.');
+//        });
+//
+//        // вызовем событие resize
+//        $(window).resize();
         </script>
     </head>
 
@@ -75,7 +102,9 @@
                 </ul>
             </div>
             <div id="content">
-                
+<!--        <div id="map_canvas" style="background: red; width: 600px ; height: 340px; position: relative;
+                                    float: right; display: block; opacity: 0.5;z-index: 1000;"></div>-->
+
             </div>
 
             <div id="footer">
@@ -84,5 +113,10 @@
                 </p>  
             </div>   
         </div>
+        <script language="javascript">
+            $(document).ready(function(){
+                $('#map_canvas').css('background','green');                
+            })
+        </script>
     </body>
 </html>

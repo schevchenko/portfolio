@@ -19,61 +19,36 @@
         </form>
     </div>
 </div>
-<div id="map_canvas" style="width: 600px ; height: 340px; position: relative; float: right; display: block;">
-
-</div>
-
 <script language="javascript"> 
-
-    function initializing(){
-
-        var myLatlng = new google.maps.LatLng(40.72436422, -74.00115967);
-
-        var myOptions = {
-            zoom: 18,
-            center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-        
-        var contentString = '<div id="my_comment">Ich bin hier!</div>';
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'I\'m hear!'
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
-        });
-        return;
-    }
-            initializing();
+           
 // ZOOM
     $('#decrease').hide();
     $(document).ready(function(){
-
-        $('#map_canvas').delay(200);
         $('#increase').click(function(){
             $('#my_dates').fadeOut(300,function(){
-                $('#map_canvas').animate({width: '896px', height: '418px'},1000);
+                $('#map_canvas').animate({width: '896px', height: '418px'},1000,function(){
+                initializing();      
+                });
             });            
             $('#increase').hide();
             $('#decrease').fadeIn(2000);
         });
         $('#decrease').click(function(){
-            $('#map_canvas').animate({width: '600px', height: '340px'},1000,function(){
+           $('#map_canvas').animate({width: '600px', height: '340px'},1000,function(){
                 $('#my_dates').fadeIn(300);
             });
             $('#decrease').hide();
             $('#increase').fadeIn(2000);
         });
+        $('#map_canvas').ready(function(){
+            $('#map_canvas').animate({opacity: '1'},2000);
+        });
+
     });
 
 
 
+                       
 
 
 //  ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ СОСТОЯНИЯ ВАЛИДНОСТИ
