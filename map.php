@@ -23,12 +23,6 @@
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map,marker);
         });
-//        $(window).resize(function(){
-//        initializing();
-//         // alert('Размеры окна браузера изменены.');
-//        });
-//        return $(window).resize();
-//    google.maps.event.addDomListener(window, 'map_canvas', initialize);
     return;
   }
   $(document).ready(function(){

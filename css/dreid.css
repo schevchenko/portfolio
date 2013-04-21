@@ -19,8 +19,8 @@ body {
 	src: url(fonts/YanoneKaffeesatz-Light-webfont.woff); }
  
 @font-face {
-	font-family: Lamborghini;
-	src: url(fonts/la_Macchina.ttf); }
+	font-family: Head;
+	src: url(fonts/CaviarDreams.ttf); }
  
 @font-face {
 	font-family: Ubuntu;
@@ -32,9 +32,12 @@ body {
 }*/
 #wrapper {
 	width: 900px;
-	margin: 20px auto; }
+	margin: 20px auto;
+        padding-bottom: 15px;
+}
  
 #header {
+        
 	-moz-box-shadow: 0 0 10px rgba(9, 34, 43, 1);
 	-webkit-box-shadow: 0 0 10px rgba(9, 34, 43, 1);
 	box-shadow: 0 0 10px rgba(9, 34, 43, 1);
@@ -45,7 +48,7 @@ body {
 	background: -o-linear-gradient(top, #7db9e8 0%,#2989d8 54%,#207cca 65%,#1e5799 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #7db9e8 0%,#2989d8 54%,#207cca 65%,#1e5799 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #7db9e8 0%,#2989d8 54%,#207cca 65%,#1e5799 100%); /* W3C */
-	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
 	min-height: 100px;
 	background-color: cornflowerblue;
 	border-bottom-color: black;
@@ -53,8 +56,50 @@ body {
 	border-top-right-radius: 30px; }
  
 	#header h1 {
-		font-family: Ubuntu;
-		font-size: 16px; }
+            padding: 25px 0px 0px 90px;
+            font-family: Ubuntu;
+            font-weight: normal;
+            font-size: 40px; 
+            margin: 0 auto;
+            float: left;
+        }
+        
+        #header a{
+            text-decoration: none;
+            color: black;
+        }
+        
+        #header span {
+            margin: 0;
+            padding: 0;
+            color: rgb(192, 1, 1);
+        }
+
+.hot_contact {
+    float: right;
+    margin: 10px 50px 0px 0px;
+
+}
+
+    .hot_contact img {
+        width: 50px;
+        height: 50px;
+    }
+      
+    #hint {
+        text-align: left;
+        position: relative;
+        border-radius: 2px;
+        padding: 5px 5px 5px 5px;
+        background: yellow;
+        margin-top: -10px;
+        margin-right: 30px; 
+        float: right;
+        font-family: Ubuntu;
+        clear: both;
+        display: none;
+    }
+    
  
 /* меню навигации */
 .menu {
@@ -70,7 +115,7 @@ body {
 	background: -o-linear-gradient(top, #7db9e8 0%,#207cca 53%,#207cca 79%,#2989d8 99%,#1e5799 100%);
 	background: -ms-linear-gradient(top, #7db9e8 0%,#207cca 53%,#207cca 79%,#2989d8 99%,#1e5799 100%);
 	background: linear-gradient(to bottom, #7db9e8 0%,#207cca 53%,#207cca 79%,#2989d8 99%,#1e5799 100%);
-	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 );
 	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 1);
 	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 1);
 	box-shadow: 0 0 4px rgba(0, 0, 0, 1); }
@@ -115,15 +160,12 @@ body {
     background-image:     -ms-linear-gradient(left, #ccc, #333, #ccc); 
     background-image:      -o-linear-gradient(left, #ccc, #333, #ccc); 
 }*/
-#content h1 {
-		margin: 21 auto 18;
-		text-align: center;
-		color: #1C0075;
-		border-bottom: 2px solid;
-		width: 243px;
-		font-family: Ubuntu;
-		font-size: 25px;
-		font-weight: normal; }
+	#content h1 {
+            padding: 34px 0px 0px 350px;
+            font-family: Head;
+            /*float: right;*/
+            font-size: 28px;
+            margin: 0 auto; }
  
 .personal {
 	float: left;
@@ -207,7 +249,7 @@ body {
 	background-image: -o-linear-gradient(top,#5BC0DE,#339BB9);
 	background-image: linear-gradient(top,#5BC0DE,#339BB9);
 	background-repeat: repeat-x;
-	filter: progid: dximagetransform.microsoft.gradient(startColorstr='#5bc0de',endColorstr='#339bb9',GradientType=0); }
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#5bc0de',endColorstr='#339bb9',GradientType=0); }
  
 /*  CONTACTS_BLOCK    */
 #message { padding: 10 10 0 10; }
@@ -391,7 +433,7 @@ body {
 #social_networks a { text-decoration: none; }
  
 #map_canvas {
-	background: red;
+	background: #FF0000;
 	width: 600px ;
 	height: 340px;
 	position: relative;

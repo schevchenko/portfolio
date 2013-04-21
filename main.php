@@ -1,4 +1,5 @@
-	<script language="javascript"> 
+	<script language="javascript">
+//  change opacity in skills
             $('#s2Trig1').mouseenter(function(){
                $(this).addClass('active_anchor');
                $('#tl2').addClass('active');
@@ -63,22 +64,10 @@
                 $(this).removeClass('active_anchor');
                 $('#tl1').removeClass('active');
             });
-
-            $(document).ready(function(){
-              //  alert($('#graph').get());
-                var a = $("[id ^= s2Trig]").toArray();
-              //  alert($(a['1']).text('picko'));
-//              for(i in a){
-//                  $('#test').append(function(){
-//                      return $(a[i]).attr('id');
-//                  }).append('<br>');
-//              }
-            })
         </script>
-        
+        <h1>Technical skills</h1>  
 	<section id="who">
             <div id="test"></div>
-<!--		<h1>WHO'S USING IT?</h1>	-->
 		<div id="graph">
 			<div id="tl1"></div>
 			<div id="tl2"></div>
@@ -99,4 +88,4 @@
                     <li id="s2Trig7"><span></span>InDesign</li>
                     <li id="s2Trig8"><span></span>3D Max</li>
 		 </ul> 
-	</section> <!-- / SECTION 2 -->
+	</section>

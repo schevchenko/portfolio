@@ -1,74 +1,60 @@
-<?php
-   // print_r($_SERVER);
-?>
-<div id="img-container">
-    <div id="header-portfolio">
-        
-    </div>
-    <div class="portfolio" id="fuck_you">
-        <div class="link" style="cursor: pointer;">
-            <p><a id="ubersatz" href="http://slovari.yandex.ru//de-ru/" target="_blank">&rarr; на сайт </a></p>
+<div id="slider_container" style="overflow: visible; min-height: 500px;">
+    <div class="flexslider">
+        <div class="description">           
         </div>
-        <a href="#">
-            <img src="/images/tmp.jpg">
-        </a>
+        <ul class="slides">
+          <li>
+            <img src="images/sliders/automega.png" />
+          </li>
+          <li>
+            <img src="images/sliders/osmart.png" />
+          </li>
+          <li>
+            <img src="images/sliders/kontaktelektro.png" />
+          </li>
+          <li>
+            <img src="images/sliders/pumpe.png" />
+          </li>
+        </ul>
     </div>
-    <div class="portfolio">
-        <div class="link" style="cursor: pointer;">
-            <p><a id="ubersatz" href="http://slovari.yandex.ru//de-ru/" target="_blank">&rarr; на сайт </a></p>
-        </div>
-        <a href="#">
-            <img src="/images/tmp.jpg">
-        </a>
-    </div>
-    <div class="portfolio">
-        <div class="link" style="cursor: pointer;">
-            <p><a id="ubersatz" href="http://slovari.yandex.ru//de-ru/" target="_blank">&rarr; на сайт </a></p>
-        </div>
-        <a href="#">
-            <img src="/images/tmp.jpg">
-        </a>
-    </div>
-    <div id="new"></div>
+
 </div>
 
 <script language="javascript">
-        $('#wort').change(function(){
-            $.post(
-                'translate.php',
-                {
-                    query: this.value
-                },
-                function(data){
-                    alert(data);
-                },'json'
-            );
-//            $('#ubersatz').attr('href','http://slovari.yandex.ru/'+$('#wort').val()+'/de-ru/');
-////            $('#new').load('http://slovari.yandex.ru/'+$('#wort').val()+'/de-ru/');
-// //           $('#new').load('http://konjugator.reverso.net/konjugation-deutsch-verb-'+$('#wort').val()+'.html');
-//            function jsonp_callback(){
-//                $('.b-translation__card b-translation__card_examples_visible').val();
-//            }
-//            $.ajax({
-//                dataType: 'jsonp',
-//                jsonp: 'jsonp_callback',
-//                url: 'http://konjugator.reverso.net/konjugation-deutsch-verb-'+$('#wort').val()+'.html',
-//               success: function (data) {
-//                  alert('jsonp'); // тут уже ничего не работает!
-//               }
-//            });
-        });
 
-        $('.portfolio a').mouseenter(function(){
-           // alert($(this.parentNode.children[0].length));
-            $(this.parentNode.children[0]).fadeIn('fast', function() {
-               // $('#footer').text('Zeitgeist');
-            });
+//  Companies list
+        var arr = [ 
+           {name: '\"Megapolis-Concert\"', description: "Аренда автомобилей премиум-класса", hyperlink: 'http://avto-mega.ru'}, 
+           {name: '\"O-Smart\"', description: "Информационный ресурс посвященный автомобилям Smart", hyperlink: 'http://osmart.ru'}, 
+           {name: 'Контакт-Электроарматура', description: "Производство линейно-подвесной арматуры для линий электропередач.", hyperlink: 'http://kontaktelektro.ru'}, 
+           {name: '\"Hydro-Shop\"', description: "Поставки оборудования для инженерных систем водоснабжения, отопления и канализации.", hyperlink: 'http://www.pumpe.ru/'}, 
+        ];
+        
+//  Show/Hide Description
+        $('.flexslider').flexslider({
+
+            end: function(slider){
+               $('.description').fadeOut(1000);
+            },
+            start: function(slider){
+               $('.description').fadeIn(1200,function(){$('.description').html(function(){
+                    return a = "<h4>"+arr[slider.currentSlide]['name']+"</h4>"+"<p>"+
+                                arr[slider.currentSlide]['description']+"</p>"+
+                                "<a href=\""+arr[slider.currentSlide]['hyperlink']+"\" target=\"_blank\">"+arr[slider.currentSlide]['hyperlink']+"</a>";
+                        });
+                     });
+            },
+            before: function(slider){
+               $('.description').fadeOut(1000);
+            },
+            after: function(slider){
+               $('.description').fadeIn(800);
+               $('.description').html(function(){
+                    return a = "<h4>"+arr[slider.currentSlide]['name']+"</h4>"+"<p>"+
+                            arr[slider.currentSlide]['description']+"</p>"+
+                            "<a href=\""+arr[slider.currentSlide]['hyperlink']+"\" target=\"_blank\">"+arr[slider.currentSlide]['hyperlink']+"</a>";
+               });
+            }
         });
-        $('.link').mouseleave(function(){
-            $('.link').fadeOut('fast', function() {
-                //$('#footer').text('Zeitgeist');
-            });
-        }) 
 
 </script>

@@ -1,6 +1,3 @@
-<?php
-//    print_r($_SERVER);
-?>
 <div id="introduction">
     <a id="increase" href="#"> Increase map </a>
     <a id="decrease" href="#" > Decrease map</a>
@@ -46,17 +43,12 @@
 
     });
 
-
-
-                       
-
-
-//  ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ СОСТОЯНИЯ ВАЛИДНОСТИ
+//  ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ СОСТОЯНИЯ ВАЛИДНОСТИ "MESSAGE"
 
 email_valid =   false;
 text_valid =    false;
 
-/*
+
 // ПРОВЕРЯЕМ ВАЛИДНОСТЬ Е-MAIL;
    
     $('#email').change(function(){
@@ -136,7 +128,6 @@ text_valid =    false;
         }
     });
     
-*/
 // ОТПРАВКА ДАННЫХ
     $('#send').click(function(){
         $.post(
